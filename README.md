@@ -146,8 +146,8 @@ duration of infectiousness, development and duration of symptoms, and sensitivit
 of tests of different kinds, so that available resources can be used most effectively.
 
 This project's approach to development follows established open source licensing, and
-approaches to development of reliable, scalable, maintainable distributed software systems
-such as domain driven design and event sourcing.
+approaches to development of reliable, scalable, maintainable distributed software
+systems such as domain driven design and event sourcing.
 
 ## Scope of the work
 
@@ -174,13 +174,8 @@ such as domain driven design and event sourcing.
         - By test request ID
     - Interview suspected case of infection
         - Record time of interview
-        - Ask if recently tested
-            - If not known
-        - Record test result
         - Ask about and assess encounters with other people
-            - From memory
-            - Log in contract tracing app on mobile device
-            - Details of each encounter
+            - Record details of each encounter
                 - Place
                 - Date and time
                 - Type of encounter
@@ -189,18 +184,13 @@ such as domain driven design and event sourcing.
                 - Telephone number of person
             - Open new suspected cases of infection...
         - Ask about use of shared spaces (work, public transport, shops, gyms, restaurants, etc)
-            - From memory
-            - Log in contract tracing app on mobile device
-            - Details of each use
+            - Record details of each use
                 - Place
                 - Date and time
                 - Type of use
                 - Risk of transmission
-        - Record use of shared spaces
-            - Notes
-            - Record public transport use
-            - Record gyms, restaurants, bars, etc
-        - Record symptoms
+        - Ask about symptoms
+            - Record symptoms
         - Give advice and instructions
             - Start recording encounters with other people
             - Avoid infecting other people
