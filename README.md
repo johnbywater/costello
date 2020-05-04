@@ -21,36 +21,29 @@ to support the need expressed many times by Anthony Costello.
 
 ## Analysis
 
-- Trace suspected cases of infection
-    - Open new suspected case (case not present, contacts unknown)
-        - Personal information
+- Detect suspected cases of infection
+    - Open new suspected case
+        - Add personal information
             - Name
             - Telephone number
-        - Test details
-            - Test reference number
-            - Type of test
-            - Date of test
-        - Symptom details
-            - Date of onset of symptoms
-            - Notes
+        - Add reason for suspicion
+            - Positive test result
+                - Test reference number
+                - Type of test
+                - Date of test
+            - Matching symptoms
+                - Date of onset of symptoms
+                - Notes
+            - Contact with suspected case
+                - Case ID
         - Notes
-    - Query list of suspected cases of infection
-        - Priority allocation for interview
-        - In hospital-team
-        - Prioritised by potential for propagating infection
+    - Select suspected case of infection
+        - By case ID
+        - By priority for investigation
         - By telephone number
         - By test request ID    
-    - Get details of suspected case of infection by case ID
-        - Record access
-    - Update suspected case with test result
-        - Positive (increase isolation?)
-        - Negative (decrease isolation?)
-    - Try to contact new suspected cases of infection...
-        - Record attempt to contact case
-    - Record unable to have interview by arranged appointment 
         - Time of appointment
-    - Record unable to get through when contacted
-    - Record interview with suspected case of infection
+    - Interview suspected case of infection
         - Record time of interview
         - Ask if recently tested
             - If not known
@@ -62,34 +55,32 @@ to support the need expressed many times by Anthony Costello.
             - Risk of transmission
         - Record encounters with potential cases of infection
             - Details of encounter
-                - Place
-                - Time
-            - Contact details
                 - Name
                 - Telephone number
-            - Add Notes
-            - Record new suspected case of infection (contact with suspected case)
+                - Place
+                - Date and time
                 - Type of encounter
-                - Date of encounter
-            - Ask about visits to shared spaces (work, public transport, shops, gyms, restaurants, etc)
-                - Identify people who shared space at the same time or afterwards
-            - Record use of shared spaces
-                - Notes
-                - Record public transport use
-                - Record gyms, restaurants, bars, etc
-            - Record symptoms
-            - Give advice and instructions
-                - Start recording encounters with other people
-                - Avoid infecting other people
-                    - Quarantine requirements
-                    - Wear a mask during encounters with others
-                    - Avoid meeting vulnerable people
-                    - Avoid using shared spaces
+        - Ask about visits to shared spaces (work, public transport, shops, gyms, restaurants, etc)
+            - Identify people who shared space at the same time or afterwards
+        - Record use of shared spaces
+            - Notes
+            - Record public transport use
+            - Record gyms, restaurants, bars, etc
+        - Record symptoms
+        - Give advice and instructions
+            - Start recording encounters with other people
+            - Avoid infecting other people
+                - Quarantine requirements
+                - Wear a mask during encounters with others
+                - Avoid meeting vulnerable people
+                - Avoid using shared spaces
             - Monitor symptoms and request medical assistance if required
                 - Temperature, coughing, breathing, oxygen levels
-            - Record advice and instructions given
+        - Record advice and instructions given
+        - Open new suspected cases of infection...
+        - Schedule follow up interview
     - Request test for suspected case of infection
-    - Schedule follow up interview
+    - Update suspected case with test result
 
 
 Need to register who went into a shared spaces so can contact trace?
