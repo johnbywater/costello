@@ -175,24 +175,22 @@ systems such as domain driven design and event sourcing.
     - Interview suspected case of infection
         - Record time of interview
         - Ask about and assess encounters with other people
-            - Record details of each encounter
-                - Place
-                - Date and time
-                - Type of encounter
-                - Risk of transmission
-                - Name of person
-                - Telephone number of person
-            - Open new suspected cases of infection...
+        - Record details of each encounter
+            - Place
+            - Date and time
+            - Type of encounter
+            - Risk of transmission
+            - Name of person
+            - Telephone number of person
         - Ask about use of shared spaces (work, public transport, shops, gyms, restaurants, etc)
-            - Record details of each use
-                - Place
-                - Date and time
-                - Type of use
-                - Risk of transmission
+        - Record details of each use
+            - Place
+            - Date and time
+            - Type of use
+            - Risk of transmission
         - Ask about symptoms
-            - Record symptoms
+        - Record symptoms
         - Give advice and instructions
-            - Start recording encounters with other people
             - Avoid infecting other people
                 - Quarantine requirements
                 - Wear a mask during encounters with others
@@ -200,8 +198,10 @@ systems such as domain driven design and event sourcing.
                 - Avoid using shared spaces
             - Monitor symptoms and request medical assistance if required
                 - Temperature, coughing, breathing, oxygen levels
+            - Start recording encounters with other people
         - Record advice and instructions given
         - Schedule follow up interview
+        - Open new suspected cases of infection...
     - Investigate other users of a shared space
         - Identify people who shared space at the same time or afterwards
         - Ask about and assess encounters with other people
