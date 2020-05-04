@@ -9,9 +9,9 @@ This system is motivated by the occurrence of the Cononavirus (COVID-19) pandemi
 
 ## Abstract
 
-Costello is a reliable, scalable, event-sourced, open source software system designed to support
-mass contact tracing for novel infectious diseases such as the Cononavirus (COVID-19) virus. It has
-been written to support the need expressed many times by public health experts such as Anthony Costello,
+*Costello* is a reliable, scalable, event-sourced, open source software system designed to support
+mass contact tracing for novel infectious diseases such as the Cononavirus (COVID-19) virus. It is
+being developed to support a need expressed many times by public health experts such as Anthony Costello,
 Alison Pollock, Jeanelle de Gruchy and others, and public health institutions such as the World Health
 Organisation, and the European Centre for Disease Prevention and Control.
 
@@ -22,12 +22,12 @@ Organisation, and the European Centre for Disease Prevention and Control.
   * https://www.who.int/dg/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020
 
 * European Centre for Disease Prevention and Control - Contact tracing: Public health management of persons, including healthcare workers, having had contact with COVID-19 cases in the European Union
-  * This document outlines the key steps of contact tracing, including contact identification, listing and follow-up, in the context of the COVID-19 response. Contact management is based on the latest available evidence, as outlined below.
+  * "This document outlines the key steps of contact tracing, including contact identification, listing and follow-up, in the context of the COVID-19 response. Contact management is based on the latest available evidence, as outlined below.
     * Current estimates suggest a median incubation period from five to six days, with a range from 1 to 14 days. A recent modelling study confirmed that it remains prudent to consider an incubation period of up to 14 days [1,2].
     * A case may already be infectious up to 48 hours before the onset of symptoms. A recent study reported that 12.6% of case reports indicated pre-symptomatic transmission [3]. In addition, the proportion of presymptomatic transmission has been inferred through modelling and was estimated to be – in the presence of control measures – at around 48% and 62% in Singapore and China (Tianjin data), respectively [4]. Other studies have shown no significant difference in viral load in asymptomatic and symptomatic patients, indicating the potential of virus transmission from asymptomatic patients [5-7].
     * Transmission is believed to be mainly via respiratory droplets and direct contact with infected people, andindirect contact with surfaces or objects in the immediate environment [8]. Recent experimental studies carried out under highly controlled conditions have demonstrated the survival of SARS-CoV-2 on different surfaces as well as in aerosol. Different levels of environmental contamination have been described in
 rooms of COVID-19 patients [9-11].
-    * Up to 10% of reported cases in China [12] and up to 9% of cases in Italy were among healthcare workers[13]. It is likely that nosocomial outbreaks play an important role in amplifying local outbreaks, and they disproportionately affect elderly and vulnerable populations. 
+    * Up to 10% of reported cases in China [12] and up to 9% of cases in Italy were among healthcare workers[13]. It is likely that nosocomial outbreaks play an important role in amplifying local outbreaks, and they disproportionately affect elderly and vulnerable populations." 
   * https://www.ecdc.europa.eu/en/covid-19-contact-tracing-public-health-management
 
 * Really important discussion about contact tracing on World At One today (22nd April 2020), with Daniel Falush (https://twitter.com/DanielFalush) and Allyson Pollock (https://theconversation.com/profiles/allyson-pollock-124791)
@@ -113,6 +113,9 @@ To name just a few...
 Contact tracing is an important part of process of disease eradication and control ("detect, test, treat, isolate,
 trace, and mobilize").
 
+Just as a pandemic is made up of epidemics in many countries around the world, and epidemic is made up of
+many outbreaks around a country. It is necessary to tackle a pandemic by tackling outbreaks at a local level. 
+
 Contact tracing is intended to catch up with the spread of an infectious disease by identifying individuals
 that may have been infected by exposure to an infectious individual. The related parts are intended variously
 to find suspected cases of infection ("detect"), to confirm suspected cases of infection ("test"), to mitigate
@@ -121,21 +124,19 @@ suspected cases and providing support for their needs ("isolate"), and to encour
 to the process of disease control such as with detecting, testing, treating, tracing, isolating, and mobilizing
 ("mobilize").
 
-There are various approaches to contract tracing.
-
-The "traditional" approach establishes contract tracing teams to interview "confirmed cases", generating a list of
-"contacts" which are classed as "high risk" and "low risk". High risk contacts are normally quarantined and tested.
-Low risk contacts are advised to avoid travel and contact with vulnerable people, and may be tested. Both types of
-contact are monitored for the development of symptoms, and tested if they develop symptoms. A positive test or
-development of symptoms will cause a contact to become a "confirmed case".
+There are various approaches to contract tracing. The "traditional" approach establishes contract tracing teams to
+interview "confirmed cases", generating a list of "contacts" which are classed as "high risk" and "low risk". High
+risk contacts are normally quarantined and tested. Low risk contacts are advised to avoid travel and contact with
+vulnerable people, and may be tested. Both types of contact are monitored for the development of symptoms, and tested
+if they develop symptoms. A positive test or development of symptoms will cause a contact to become a "confirmed case".
 
 The "digital" contract tracing approach uses proximity detection features of digital devices to track contact events,
 and the log of contact events is used to notify contacts of confirmed cases.
 
-The approach taken in this project is to build on both these approaches, and adopt a probabilistic approach to
-managing risk, based on current understandings of transmission, development and duration of infectiousness,
-development and duration of symptoms, and sensitivity and specificity of tests of different kinds, so that
-available resources can be used most effectively.
+The approach taken in this project is to build on both these approaches in an open source manner, and adopt a
+probabilistic approach to managing risk and optimising outcomes, based on current understandings of transmission,
+development and duration of infectiousness, development and duration of symptoms, and sensitivity and specificity
+of tests of different kinds, so that available resources can be used most effectively.
 
 ## Scope of the work
 
