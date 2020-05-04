@@ -105,6 +105,7 @@ To name just a few...
 * TraceTogether https://en.wikipedia.org/wiki/TraceTogether
 * OpenTrace https://en.wikipedia.org/wiki/BlueTrace#OpenTrace
 * Google/Apple contract tracing project https://en.wikipedia.org/wiki/Google_/_Apple_contact_tracing_project
+* Decentralized Privacy-Preserving Proximity Tracing https://github.com/DP-3T
 
 ...and many more.
  
