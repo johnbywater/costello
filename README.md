@@ -15,7 +15,7 @@ being developed to support a need expressed many times by public health experts 
 Alison Pollock, Jeanelle de Gruchy and others, and public health institutions such as the World Health
 Organisation, and the European Centre for Disease Prevention and Control.
 
-## Background docs
+## Background notes
 
 * WHO Director-General's opening remarks at the media briefing on COVID-19 - 11 March 2020
   * "If countries detect, test, treat, isolate, trace, and mobilize their people in the response, those with a handful of cases can prevent those cases becoming clusters, and those clusters becoming community transmission. Even those countries with community transmission or large clusters can turn the tide on this virus. Several countries have demonstrated that this virus can be suppressed and controlled."
