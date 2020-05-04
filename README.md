@@ -116,11 +116,11 @@ To name just a few...
  
 ## Analysis
 
-Contact tracing is an important part of process of disease eradication and control ("detect, test, treat, isolate,
+Contact tracing is an important part of the process of disease eradication and control ("detect, test, treat, isolate,
 trace, and mobilize"). A fine balance must be found and maintained between protecting health, minimizing economic
 and social disruption, and respecting human rights.
 
-Just as a pandemic is made up of epidemics in many countries around the world, and epidemic is made up of
+Just as a pandemic is made up of epidemics in many countries around the world, an epidemic is made up of
 many outbreaks around a country. It is necessary to tackle a pandemic by tackling outbreaks at a local level. 
 
 Contact tracing is intended to catch up with the spread of an infectious disease by identifying individuals
@@ -134,20 +134,20 @@ to the process of disease control such as with detecting, testing, treating, tra
 There are various approaches to contract tracing. The "traditional" approach establishes contract tracing teams to
 interview "confirmed cases", generating a list of "contacts" which are classed as "high risk" and "low risk". High
 risk contacts are normally quarantined and tested. Low risk contacts are advised to avoid travel and contact with
-vulnerable people, and may be tested. Both types of contact are monitored for the development of symptoms, and tested
-if they develop symptoms. A positive test or development of symptoms will cause a contact to become a "confirmed case".
+vulnerable people, and may be tested. Both types of contact are monitored for the development of symptoms. A
+positive test or development of symptoms may cause a contact to be considered as a "confirmed case".
 
-The "digital" contract tracing approach uses proximity detection features of digital devices to track contact events,
+The "digital" contract tracing approach uses proximity detection features of digital devices to log contact events,
 and the log of contact events is used to notify contacts of confirmed cases.
 
-The approach taken in this project is to build on both these approaches in and to go further by adopt a probabilistic
+The approach taken in this project is to build on both these approaches and to go further by adopting a probabilistic
 approach to managing risk and optimising outcomes, based on current understandings of transmission, development and
 duration of infectiousness, development and duration of symptoms, and sensitivity and specificity
 of tests of different kinds, so that available resources can be used most effectively.
 
-This project's approach to software development follows established open source approach to licensing, and established
-approaches to development of reliable, scalable, maintainable distributed systems such as domain driven design and
-event sourcing.
+This project's approach to development follows established open source licensing, and
+approaches to development of reliable, scalable, maintainable distributed software systems
+such as domain driven design and event sourcing.
 
 ## Scope of the work
 
