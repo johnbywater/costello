@@ -22,11 +22,11 @@ to support the need expressed many times by Anthony Costello.
 ## Analysis
 
 - Detect suspected cases of infection
-    - Open new suspected case
+    - Open new suspected case of infection
         - Add personal information
             - Name
             - Telephone number
-        - Add reason for suspicion
+        - Record reason for opening case
             - Positive test result
                 - Test reference number
                 - Type of test
@@ -41,27 +41,31 @@ to support the need expressed many times by Anthony Costello.
         - By case ID
         - By priority for investigation
         - By telephone number
-        - By test request ID    
-        - Time of appointment
+        - By test request ID
     - Interview suspected case of infection
         - Record time of interview
         - Ask if recently tested
             - If not known
         - Record test result
-        - Ask about and assess encounters (since date of infection)
-            - Name of person
-            - Telephone number of person
-            - Nature of encounter
-            - Risk of transmission
-        - Record encounters with potential cases of infection
-            - Details of encounter
-                - Name
-                - Telephone number
+        - Ask about and assess encounters with other people
+            - From memory
+            - Log in contract tracing app on mobile device
+            - Details of each encounter
                 - Place
                 - Date and time
                 - Type of encounter
-        - Ask about visits to shared spaces (work, public transport, shops, gyms, restaurants, etc)
-            - Identify people who shared space at the same time or afterwards
+                - Risk of transmission
+                - Name of person
+                - Telephone number of person
+            - Open new suspected cases of infection...
+        - Ask about use of shared spaces (work, public transport, shops, gyms, restaurants, etc)
+            - From memory
+            - Log in contract tracing app on mobile device
+            - Details of each use
+                - Place
+                - Date and time
+                - Type of use
+                - Risk of transmission
         - Record use of shared spaces
             - Notes
             - Record public transport use
@@ -77,11 +81,29 @@ to support the need expressed many times by Anthony Costello.
             - Monitor symptoms and request medical assistance if required
                 - Temperature, coughing, breathing, oxygen levels
         - Record advice and instructions given
-        - Open new suspected cases of infection...
         - Schedule follow up interview
+    - Investigate other users of a shared space
+        - Identify people who shared space at the same time or afterwards
+        - Ask about and assess encounters with other people
+            - From memory
+            - Log in venue or transport vehicle
+            - Details of each encounter
+                - Place
+                - Date and time
+                - Type of encounter
+                - Risk of transmission
+                - Name of person
+                - Telephone number of person
+            - Open new suspected cases of infection...
     - Request test for suspected case of infection
     - Update suspected case with test result
+    - Close suspected case of infection
+        - Record reason for closing case
 
 
 Need to register who went into a shared spaces so can contact trace?
 Need to investigate use of shops (payment card information?)
+Need model relating earliest time of infectiousness to:
+   - first positive test result (14 days before?)
+   - onset of matching symptoms (14 days before?)
+   - contact with suspected case of infection (2/3 days later?)
