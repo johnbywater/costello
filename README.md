@@ -204,10 +204,7 @@ systems such as domain driven design and event sourcing.
         - Open new suspected cases of infection...
     - Investigate other users of a shared space
         - Identify people who shared space at the same time or afterwards
-        - Ask about and assess encounters with other people
-            - From memory
-            - Log in venue or transport vehicle
-            - Details of each encounter
+            - Details of each use
                 - Place
                 - Date and time
                 - Type of encounter
