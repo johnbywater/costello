@@ -108,6 +108,11 @@ To name just a few...
 * Decentralized Privacy-Preserving Proximity Tracing https://github.com/DP-3T
 
 ...and many more.
+
+## Stories
+
+* Kerela https://www.theguardian.com/commentisfree/2020/apr/21/kerala-indian-state-flattened-coronavirus-curve
+* Agra https://uk.reuters.com/article/us-health-coronavirus-india-agra-insight/in-the-city-of-the-taj-mahal-coronavirus-resurgence-carries-warning-signs-idUKKBN22G08I
  
 ## Analysis
 
