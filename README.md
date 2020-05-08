@@ -94,7 +94,26 @@ Allyson (absolutely stunning amount of useful information and clarity, almost a 
 * Wikipedia article on contact tracing and digital contract tracing
   * https://en.wikipedia.org/wiki/Contact_tracing
   * https://en.wikipedia.org/wiki/Digital_contact_tracing
-
+  
+* Paul Romer's Blog
+  * https://paulromer.net/covid-sim-part1/
+    * "To understand the effects that more testing could have on the course of the pandemic, I constructed a simple model that I could use to simulate and visualize the effects of different policies."
+  * https://paulromer.net/covid-sim-part2/
+    * "This comparison shows that isolation based on test results requires much less disruption to normal patterns of social interaction. An economy can survive with 10% of the population insolation. It can’t survive when 50% of the population is in isolation."
+  * https://paulromer.net/covid-sim-part3/
+    * "How much difference does it make if the test used to send people into quarantine is bad? Not as much as you might think."
+  * https://paulromer.net/roadmap-to-reopen-america/
+    * "America is confronting two crises: an economic crisis laying waste to our livelihoods and a health crisis threatening our lives. The twin crises are deeply intertwined: our economy cannot be reopened without credibly addressing fears of infection and resurgence."
+  * https://paulromer.net/if-tests-were-sodas/
+    * "Researchers affiliated with Rutgers University did discover that you do not need a swab to do an RT-PCR test for the SARS-CoV-2 virus. They even went to the trouble to get an EUA to conduct tests on saliva samples."
+  
+* Independent SAGE Livestream
+  * https://www.youtube.com/watch?v=cFLAwZeNfxE
+  
+* https://www.endcoronavirus.org/
+  * "We don't have to accept the idea that COVID-19 is here to stay. Many countries are succeeding in eliminating the virus, and it only takes a few weeks."
+  * https://twitter.com/DerrickVanGenn2/status/1257752831962034176
+  
 ## Other projects
 
 To name just a few...
@@ -144,10 +163,6 @@ The approach taken in this project is to build on both these approaches and to g
 approach to managing risk and optimising outcomes, based on current understandings of transmission, development and
 duration of infectiousness, development and duration of symptoms, and sensitivity and specificity
 of tests of different kinds, so that available resources can be used most effectively.
-
-This project's approach to development follows established open source licensing, and
-approaches to development of reliable, scalable, maintainable distributed software
-systems such as domain driven design and event sourcing.
 
 ## Scope of the work
 
@@ -201,40 +216,74 @@ systems such as domain driven design and event sourcing.
             - Start recording encounters with other people
         - Record advice and instructions given
         - Schedule follow up interview
+    - Identify users of shared space during or after use by suspected case of infection
+        - Access log of users of shared space (local log, payment records)
+            - Place
+            - Date and time
+            - Name of person
+            - Telephone number of person
+        - Need to investigate use of shops (payment card information?)
         - Open new suspected cases of infection...
-    - Investigate other users of a shared space
-        - Identify people who shared space at the same time or afterwards
-            - Details of each use
-                - Place
-                - Date and time
-                - Type of encounter
-                - Risk of transmission
-                - Name of person
-                - Telephone number of person
-            - Open new suspected cases of infection...
     - Request test for suspected case of infection
     - Update suspected case with test result
     - Close suspected case of infection
         - Record reason for closing case
+    - Register visits to a shared space
+        - Date and time
+        - Type of encounter
+        - Risk of transmission
+        - Name of person
+        - Telephone number of person
 
+    - Model relation between earliest time of infectiousness to:
+        - first positive test result (14 days before?)
+        - onset of matching symptoms (14 days before?)
+        - contact with suspected case of infection (2/3 days later?)
 
-Need to register who went into a shared spaces so can contact trace?
-Need to investigate use of shops (payment card information?)
-Need model relating earliest time of infectiousness to:
-   - first positive test result (14 days before?)
-   - onset of matching symptoms (14 days before?)
-   - contact with suspected case of infection (2/3 days later?)
-
+- Contact tracing policies
+    - Whenever matching symptoms are reported
+        - Open case, or update case
+    - Whenever test results are reported
+        - Open case, or update case
+    - Whenever contact event is recorded for a case
+        - Open case, or update case
+    - Whenever a case is opened
+        - Join priority queue for contract tracing interview
+    - Whenever positive test result is recorded for a case
+        - Increase case probability of infection
+    - Whenever negative test result is recorded
+        - Decrease probability of infection
+    - Whenever matching symptoms are recorded
+        - Increase case probability of infection
+        - Update cases that had contact with this case
+    - Whenever probability of infection changes
+        - Adjust position in priority queue for contact tracing interview
+        - Adjust position in priority queue for testing
+        - Update cases that had contact with this case
+    - Whenever probability of infection reaches threshold for medical treatment
+        - Notify health care services
+    - Whenever probability of infection reaches threshold for quarantine
+        - Notify user to read advice on self-isolation and monitoring for symptoms
+        - Notify individual to self-isolate 
+        - Notify local support services 
+    - Whenever probability of infection falls below threshold for closing a case
+        - Close case
+        
+Todo:
+    - Something about infectiousness, relation to transmitting infection, and test results
 
 ## Scope of the system
+
+* Aggregate: Person
+  * Domain events:
+      * NamedUpdated
+      * TelephoneNumberUpdated
+      * EmailAddressUpdated
 
 * Aggregate: SuspectedCase
   * Domain events:
       * Opened
       * Closed
-      * NamedUpdated
-      * TelephoneNumberUpdated
-      * EmailAddressUpdated
       * InterviewNotesAdded
       * InterviewNotesUpdated
       * TestRequested
@@ -245,11 +294,15 @@ Need model relating earliest time of infectiousness to:
       * TransportUsed
       * QuarantineStatusUpdated
   
-* Aggregate: Disease
+* Aggregate: DiseaseModel
   * Domain events:
       * Registered
       * InfectiousProfileUpdated
       * SymptomDevelopmentProfileUpdated
+      
+* Aggregate: PolicyModel
+  * Domain event:
+      
  
 * Aggregate: Test
   * Created
