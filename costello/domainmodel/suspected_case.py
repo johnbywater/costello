@@ -9,6 +9,7 @@ class SuspectedCase(BaseAggregateRoot):
 
     def __init__(self, *, person_id, **kwargs: Any):
         super().__init__(**kwargs)
+        self.symptoms = []
         self.person_id = person_id
         self.test_results = []
         self.is_closed = False
@@ -50,3 +51,21 @@ class SuspectedCase(BaseAggregateRoot):
     @property
     def has_been_tested(self):
         return bool(len(self.test_results))
+
+    def record_symptoms(self, symptoms: tuple, date: date):
+        self.__trigger_event__(SuspectedCase.SymptomsRecorded, symptoms=symptoms, date=date)
+
+    class SymptomsRecorded(BaseAggregateRoot.Event):
+        @property
+        def symptoms(self):
+            return self.__dict__['symptoms']
+
+        @property
+        def date(self):
+            return self.__dict__['date']
+
+        def mutate(self, obj: "SuspectedCase"):
+            obj.symptoms.append({
+                "symptoms": self.symptoms,
+                "date": self.date
+            })

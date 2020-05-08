@@ -33,3 +33,11 @@ class TestSuspectedCase(TestCase):
         self.assertEqual(case.test_results[1]["type"], "PCR")
         self.assertEqual(case.test_results[1]["date"], date(2020, 4, 8))
         self.assertEqual(case.test_results[1]["result"], "negative")
+
+    def test_record_symptoms(self):
+        case = SuspectedCase.open(person_id=uuid4())
+
+        # Has cough.
+        case.record_symptoms(symptoms=["cough", "fever"], date=date(2020, 4, 1))
+        self.assertEqual(len(case.symptoms), 1)
+
