@@ -1,5 +1,6 @@
-from datetime import date
-from typing import Any
+from datetime import date, datetime
+from typing import Any, Dict
+from uuid import UUID
 
 from eventsourcing.domain.model.aggregate import BaseAggregateRoot
 
@@ -9,6 +10,7 @@ class SuspectedCase(BaseAggregateRoot):
 
     def __init__(self, *, person_id, **kwargs: Any):
         super().__init__(**kwargs)
+        self.uses_of_shared_space = []
         self.symptoms = []
         self.person_id = person_id
         self.test_results = []
@@ -52,7 +54,7 @@ class SuspectedCase(BaseAggregateRoot):
     def has_been_tested(self):
         return bool(len(self.test_results))
 
-    def record_symptoms(self, symptoms: tuple, date: date):
+    def record_symptoms(self, symptoms: Dict, date: date):
         self.__trigger_event__(SuspectedCase.SymptomsRecorded, symptoms=symptoms, date=date)
 
     class SymptomsRecorded(BaseAggregateRoot.Event):
@@ -69,3 +71,23 @@ class SuspectedCase(BaseAggregateRoot):
                 "symptoms": self.symptoms,
                 "date": self.date
             })
+
+    def record_use_of_shared_space(self, shared_space_id: UUID, date: date):
+        self.__trigger_event__(SuspectedCase.UseOfSharedSpaceRecorded, shared_space_id=shared_space_id, date=date)
+
+    class UseOfSharedSpaceRecorded(BaseAggregateRoot.Event):
+        @property
+        def shared_space_id(self):
+            return self.__dict__['shared_space_id']
+
+        @property
+        def date(self):
+            return self.__dict__['date']
+
+        def mutate(self, obj: "SuspectedCase") -> None:
+            obj.uses_of_shared_space.append(
+                {
+                    "shared_space_id": self.shared_space_id,
+                    "date": self.date,
+                }
+            )

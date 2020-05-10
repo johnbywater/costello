@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from unittest import TestCase
 from uuid import uuid4
 
@@ -38,6 +38,17 @@ class TestSuspectedCase(TestCase):
         case = SuspectedCase.open(person_id=uuid4())
 
         # Has cough.
-        case.record_symptoms(symptoms=["cough", "fever"], date=date(2020, 4, 1))
+        case.record_symptoms(symptoms={"cough": True}, date=date(2020, 4, 1))
         self.assertEqual(len(case.symptoms), 1)
 
+        # Has cough and temperature.
+        case.record_symptoms(symptoms={"cough": True, "temperature": True}, date=date(2020, 4, 2))
+        self.assertEqual(len(case.symptoms), 2)
+
+    def test_record_use_of_shared_space(self):
+        case = SuspectedCase.open(person_id=uuid4())
+
+        # Went on a bus.
+        shared_space_id = uuid4()
+        case.record_use_of_shared_space(shared_space_id=shared_space_id, date=datetime(2020, 4, 1, 10, 30, 0))
+        self.assertEqual(len(case.uses_of_shared_space), 1)
