@@ -9,16 +9,17 @@ class TestSuspectedCase(TestCase):
     def test_open_and_close(self):
         # Open case.
         person_id = uuid4()
-        case = SuspectedCase.open(person_id=person_id)
+        case = SuspectedCase.open(case_id=uuid4(), person_id=person_id, details={})
         self.assertEqual(case.person_id, person_id)
-        self.assertFalse(case.is_closed)
+        self.assertTrue(case.is_open)
 
         # Close case.
         case.close()
-        self.assertTrue(case.is_closed)
+        self.assertFalse(case.is_open)
 
     def test_record_test_result(self):
-        case = SuspectedCase.open(person_id=uuid4())
+        person_id = uuid4()
+        case = SuspectedCase.open(case_id=uuid4(), person_id=person_id, details={})
 
         # Positive test.
         case.record_test_result(type="PCR", date=date(2020, 4, 1), result="positive")
@@ -35,20 +36,37 @@ class TestSuspectedCase(TestCase):
         self.assertEqual(case.test_results[1]["result"], "negative")
 
     def test_record_symptoms(self):
-        case = SuspectedCase.open(person_id=uuid4())
+        person_id = uuid4()
+        case = SuspectedCase.open(case_id=uuid4(), person_id=person_id, details={})
 
-        # Has cough.
-        case.record_symptoms(symptoms={"cough": True}, date=date(2020, 4, 1))
+        # Record cough.
+        case.record_symptoms(details={"cough": True}, date=date(2020, 4, 1))
         self.assertEqual(len(case.symptoms), 1)
 
-        # Has cough and temperature.
-        case.record_symptoms(symptoms={"cough": True, "temperature": True}, date=date(2020, 4, 2))
+        # Record cough and temperature.
+        case.record_symptoms(
+            details={"cough": True, "temperature": True}, date=date(2020, 4, 2)
+        )
         self.assertEqual(len(case.symptoms), 2)
 
+    def test_record_contact_event(self):
+        person_id = uuid4()
+        case = SuspectedCase.open(case_id=uuid4(), person_id=person_id, details={})
+
+        # Record contact event.
+        case.record_contact_event(
+            details={"telephone_number": "0123456789"},
+            date=datetime(2020, 4, 1, 10, 30, 0),
+        )
+
     def test_record_use_of_shared_space(self):
-        case = SuspectedCase.open(person_id=uuid4())
+        person_id = uuid4()
+        case = SuspectedCase.open(case_id=uuid4(), person_id=person_id, details={})
 
         # Went on a bus.
         shared_space_id = uuid4()
-        case.record_use_of_shared_space(shared_space_id=shared_space_id, date=datetime(2020, 4, 1, 10, 30, 0))
+        case.record_use_of_shared_space(
+            details={"shared_space_id": shared_space_id},
+            date=datetime(2020, 4, 1, 10, 30, 0),
+        )
         self.assertEqual(len(case.uses_of_shared_space), 1)
